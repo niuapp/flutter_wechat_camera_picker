@@ -503,21 +503,21 @@ class CameraPickerState extends State<CameraPicker>
                 camera: camera,
               ),
             // Do not set flash modes for the front camera.
-            if (camera.lensDirection != CameraLensDirection.front)
-              Future(() async {
-                final flashMode = pickerConfig.preferredFlashMode;
-                if (flashMode != FlashMode.auto &&
-                    validFlashModes[camera]?.contains(flashMode) != false) {
-                  return wrapControllerMethod<void>(
-                    'setFlashMode',
-                    () => newController.setFlashMode(flashMode),
-                    camera: camera,
-                    onError: () {
-                      validFlashModes[camera]?.remove(flashMode);
-                    },
-                  );
-                }
-              }),
+            // if (camera.lensDirection != CameraLensDirection.front)
+            //   Future(() async {
+            //     final flashMode = pickerConfig.preferredFlashMode;
+            //     if (flashMode != FlashMode.auto &&
+            //         validFlashModes[camera]?.contains(flashMode) != false) {
+            //       return wrapControllerMethod<void>(
+            //         'setFlashMode',
+            //         () => newController.setFlashMode(flashMode),
+            //         camera: camera,
+            //         onError: () {
+            //           validFlashModes[camera]?.remove(flashMode);
+            //         },
+            //       );
+            //     }
+            //   }),
           ],
           eagerError: false,
         );
