@@ -341,32 +341,32 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
   /// Actions section for the viewer. Including 'back' and 'confirm' button.
   /// 预览的操作区。包括"返回"和"确定"按钮。
   Widget buildForeground(BuildContext context) {
-    return SafeArea(
-      child: Padding(
-        padding: const EdgeInsetsDirectional.only(
-          start: 12.0,
-          end: 12.0,
-          bottom: 12.0,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: <Widget>[
-            Semantics(
-              sortKey: const OrdinalSortKey(0),
-              child: Align(
-                alignment: AlignmentDirectional.centerStart,
-                child: buildBackButton(context),
-              ),
+    final viewPadding = MediaQuery.viewPaddingOf(context);
+    return Padding(
+      padding: EdgeInsetsDirectional.only(
+        top: viewPadding.top,
+        start: 12.0,
+        end: 12.0,
+        bottom: viewPadding.bottom,
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Semantics(
+            sortKey: const OrdinalSortKey(0),
+            child: Align(
+              alignment: AlignmentDirectional.centerStart,
+              child: buildBackButton(context),
             ),
-            Semantics(
-              sortKey: const OrdinalSortKey(2),
-              child: Align(
-                alignment: AlignmentDirectional.centerEnd,
-                child: buildConfirmButton(context),
-              ),
+          ),
+          Semantics(
+            sortKey: const OrdinalSortKey(2),
+            child: Align(
+              alignment: AlignmentDirectional.centerEnd,
+              child: buildConfirmButton(context),
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
