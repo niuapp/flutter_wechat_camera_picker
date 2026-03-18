@@ -1388,7 +1388,7 @@ class CameraPickerState extends State<CameraPicker>
     return Container(
       width: isPortrait ? null : effectiveSize,
       height: isPortrait ? effectiveSize : null,
-      padding: EdgeInsets.only(bottom: MediaQuery.paddingOf(context).bottom),
+      padding: EdgeInsets.only(bottom: MediaQuery.viewPaddingOf(context).bottom),
       child: Flex(
         direction: isPortrait ? Axis.horizontal : Axis.vertical,
         verticalDirection: orientation == DeviceOrientation.landscapeLeft

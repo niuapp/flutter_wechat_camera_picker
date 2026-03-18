@@ -347,7 +347,7 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
         top: viewPadding.top,
         start: 12.0,
         end: 12.0,
-        bottom: viewPadding.bottom,
+        bottom: viewPadding.bottom + 12.0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
