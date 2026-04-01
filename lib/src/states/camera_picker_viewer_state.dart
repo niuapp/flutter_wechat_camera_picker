@@ -341,13 +341,15 @@ class CameraPickerViewerState extends State<CameraPickerViewer> {
   /// Actions section for the viewer. Including 'back' and 'confirm' button.
   /// 预览的操作区。包括"返回"和"确定"按钮。
   Widget buildForeground(BuildContext context) {
-    final viewPadding = MediaQuery.viewPaddingOf(context);
+    final view = View.of(context);
+    final topPadding = view.viewPadding.top / view.devicePixelRatio;
+    final bottomPadding = view.viewPadding.bottom / view.devicePixelRatio;
     return Padding(
       padding: EdgeInsetsDirectional.only(
-        top: viewPadding.top,
+        top: topPadding,
         start: 12.0,
         end: 12.0,
-        bottom: viewPadding.bottom + 12.0,
+        bottom: bottomPadding + 12.0,
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
